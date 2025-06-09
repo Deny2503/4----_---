@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="regForm">
+        <h2>Реєстрація</h2>
+
+        <input type="text" id="name" placeholder="Ім’я" />
+        <div class="error" id="nameError"></div>
+
+        <input type="email" id="email" placeholder="Email" />
+        <div class="error" id="emailError"></div>
+
+        <input type="password" id="password" placeholder="Пароль" />
+        <div class="error" id="passwordError"></div>
+
+        <input type="password" id="confirmPassword" placeholder="Повтор паролю" />
+        <div class="error" id="confirmError"></div>
+
+        <button class="button" type="submit" id="submitBtn">Зареєструватися</button>
+        <div id="successMessage"></div>
+    </form>
+    <script src="main.js"></script>
+</body>
+
+</html>
