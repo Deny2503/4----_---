@@ -6,6 +6,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('submitBtn');
   const successMessage = document.getElementById('successMessage');
 
+  const loginEmail = document.getElementById('loginEmail');
+  const loginPassword = document.getElementById('loginPassword');
+  const loginBtn = document.getElementById('loginBtn');
+  const loginMessage = document.getElementById('loginMessage');
+
   let nameTouched = false;
   let emailTouched = false;
   let passTouched = false;
@@ -120,7 +125,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('regForm').addEventListener('submit', function (e) {
     e.preventDefault();
-
     nameTouched = true;
     emailTouched = true;
     passTouched = true;
@@ -129,8 +133,67 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (validateAll()) {
       successMessage.textContent = 'Успішна реєстрація!';
-      localStorage.clear();
+      localStorage.setItem('reg_email', email.value);
+      localStorage.setItem('reg_password', password.value);
       submitBtn.disabled = true;
+    }
+  });
+
+  function validateLoginEmail() {
+    const val = loginEmail.value.trim();
+    const regex = /^\S+@\S+\.\S+$/;
+    if (!val) {
+      showError(loginEmail, 'Поле не заповнене');
+      return false;
+    }
+    if (!regex.test(val)) {
+      showError(loginEmail, 'Некоректний email');
+      return false;
+    }
+
+    clearError(loginEmail);
+    return true;
+  }
+
+  function validateLoginPassword() {
+    const val = loginPassword.value;
+    if (!val) {
+      showError(loginPassword, 'Поле не заповнене');
+      return false;
+    }
+    if (val.length < 6) {
+      showError(loginPassword, 'Мінімум 6 символів');
+      return false;
+    }
+    clearError(loginPassword);
+    return true;
+  }
+
+  function updateLoginBtn() {
+    const valid = validateLoginEmail() & validateLoginPassword();
+    loginBtn.disabled = !valid;
+  }
+
+  loginEmail.addEventListener('input', updateLoginBtn);
+  loginPassword.addEventListener('input', updateLoginBtn);
+
+  document.getElementById('loginForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const valid = validateLoginEmail() && validateLoginPassword();
+    if (!valid) return;
+
+    const storedEmail = localStorage.getItem('reg_email');
+    const storedPassword = localStorage.getItem('reg_password');
+
+    if (
+      loginEmail.value === storedEmail &&
+      loginPassword.value === storedPassword
+    ) {
+      loginMessage.textContent = 'Вхід успішний!';
+      loginMessage.style.color = 'green';
+    } else {
+      loginMessage.textContent = 'Невірний email або пароль.';
+      loginMessage.style.color = 'red';
     }
   });
 });

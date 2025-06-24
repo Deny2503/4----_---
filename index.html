@@ -11,23 +11,35 @@
 
 <body>
     <form id="regForm">
-        <h2>Реєстрація</h2>
+    <h2>Реєстрація</h2>
 
-        <input type="text" id="name" placeholder="Ім’я" />
-        <div class="error" id="nameError"></div>
+    <input type="text" id="name" placeholder="Ім’я" />
+    <div class="error" id="nameError"></div>
 
-        <input type="email" id="email" placeholder="Email" />
-        <div class="error" id="emailError"></div>
+    <input type="email" id="email" placeholder="Email" />
+    <div class="error" id="emailError"></div>
 
-        <input type="password" id="password" placeholder="Пароль" />
-        <div class="error" id="passwordError"></div>
+    <input type="password" id="password" placeholder="Пароль" />
+    <div class="error" id="passwordError"></div>
 
-        <input type="password" id="confirmPassword" placeholder="Повтор паролю" />
-        <div class="error" id="confirmPasswordError"></div>
+    <input type="password" id="confirmPassword" placeholder="Повтор паролю" />
+    <div class="error" id="confirmPasswordError"></div>
 
-        <button class="button" type="submit" id="submitBtn">Зареєструватися</button>
-        <div id="successMessage"></div>
-    </form>
+    <button class="button" type="submit" id="submitBtn">Зареєструватися</button>
+    <div id="successMessage"></div>
+  </form>
+  <form id="loginForm">
+    <h2>Вхід</h2>
+
+    <input type="email" id="loginEmail" placeholder="Email" />
+    <div class="error" id="loginEmailError"></div>
+
+    <input type="password" id="loginPassword" placeholder="Пароль" />
+    <div class="error" id="loginPasswordError"></div>
+
+    <button class="button" type="submit" id="loginBtn" disabled>Увійти</button>
+    <div id="loginMessage"></div>
+  </form>
     
 </body>
 
