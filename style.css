@@ -1,46 +1,169 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f0f0f0;
-    padding: 20px;
+    background: #f6f6f6;
+    margin: 0;
+    padding: 0;
 }
 
 form {
-    max-width: 300px;
-    margin: auto;
-    margin-top: 50px;
+    max-width: 330px;
+    margin: 40px auto 0 auto;
     background: #fff;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 26px 20px 18px 20px;
+    border-radius: 12px;
+    border: 1.5px solid #e3e3e3;
+    box-shadow: 0 2px 12px 0 rgba(236, 107, 46, 0.06);
+}
+
+form h2 {
+    margin: 0 0 18px 0;
+    font-size: 1.3rem;
+    color: #ec6b2e;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
 }
 
 input {
-    width: 95%;
-    padding: 8px;
-    margin-top: 10px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+    width: 97%;
+    padding: 9px 10px;
+    margin-top: 12px;
+    margin-bottom: 2px;
+    border: 1.5px solid #ddd;
+    border-radius: 7px;
+    font-size: 1rem;
+    background: #fafafa;
+    transition: border-color 0.18s, background 0.18s;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #ec6b2e;
+    background: #fff;
+    outline: none;
 }
 
 input.error-input {
-    border-color: red;
+    border-color: #ff5959;
+    background: #fff8f8;
 }
 
 .error {
-    color: red;
-    font-size: 12px;
+    color: #ff5959;
+    font-size: 13px;
+    min-height: 17px;
+    margin-bottom: 0;
+    margin-left: 2px;
+    font-weight: 500;
 }
 
 #successMessage {
-    margin-left: 73px;
-    margin-top: 10px;
-    color: green;
-    font-weight: bold;
+    display: block;
+    margin: 13px 0 0 0;
+    color: #23a227;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.02rem;
+    letter-spacing: 0.2px;
+}
+
+#loginMessage {
+    display: block;
+    margin: 13px 0 0 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.02rem;
 }
 
 .button {
-    border-radius: 20px;
-    padding: 10px;
-    margin-left: 85px;
-    margin-top: 15px;
+    width: 100%;
+    padding: 10px 0;
+    background: #ec6b2e;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-top: 18px;
+    cursor: pointer;
+    transition: background 0.17s;
+    box-shadow: 0 1.5px 5px 0 rgba(236, 107, 46, 0.05);
+    letter-spacing: 0.5px;
+}
+
+.button:hover, .button:focus {
+    background: #bf4a16;
+}
+
+#notesPage {
+    max-width: 370px;
+    margin: 48px auto;
+    background: #fff;
+    padding: 24px 18px 20px 18px;
+    border-radius: 12px;
+    border: 1.5px solid #e3e3e3;
+}
+
+#notesPage h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 22px;
+    color: #ec6b2e;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#noteInput {
+    width: 68%;
+    padding: 8px;
+    border: 1.5px solid #ddd;
+    border-radius: 7px;
+    font-size: 1rem;
+    margin-right: 7px;
+    background: #fafafa;
+}
+
+#noteInput:focus {
+    border-color: #ec6b2e;
+    outline: none;
+    background: #fff;
+}
+
+.note_but, #logoutBtn {
+    padding: 8px 15px;
+    border: none;
+    background: #ec6b2e;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 7px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+.note_but:hover, #logoutBtn:hover {
+    background: #bf4a16;
+}
+
+#notesList {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 13px 0;
+}
+
+#notesList li {
+    background: #ffe6d2;
+    margin-bottom: 9px;
+    padding: 9px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #633e24;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logoutBtn {
+    width: 100%;
+    margin-top: 13px;
 }
